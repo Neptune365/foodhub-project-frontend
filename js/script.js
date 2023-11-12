@@ -130,8 +130,6 @@ function updatePlaceholders(inputContainer) {
 }
 /*************************************************************************************************** */
 
-
-  
   function publishRecipe() {
     // Obtener los valores de los campos
     var title = document.querySelector('input[placeholder="Título *"]').value;
