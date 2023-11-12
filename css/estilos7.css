@@ -3,7 +3,6 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     min-height: 100vh;
-    background-color: #FFF9E6;
   }
 
   .wrapper {
@@ -55,11 +54,16 @@ body {
     color: gray;
 }
   
+main {
+  background-color: #FFF9E6;
+}
+
+
   form {
     display: flex;
     justify-content: space-between;
-    background-color: white;
-    padding: 20px;
+    background-color: #FFF9E6;
+    padding: 50px;
     border-radius: 10px;
 }
 
@@ -115,11 +119,51 @@ body {
   .postfix {
     margin-left: 5px;
   }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+}
+
+.input-container input {
+    width: calc(100% - 30px); /* Reducido el espacio para acomodar el botón de quitar */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.input-row .delete-button {
+    background-color: #fff;
+    color: #FF914D;
+    border: 1px solid #FF914D;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.add-button:hover,
+.delete-button:hover {
+    background-color: #FF6340;
+}
+
+.input-row input {
+  width: 380px; /* Resta 40px para dar espacio al botón de eliminar */
+  margin-right: 10px; /* Añade un margen derecho para separar los inputs */
+}
   
   .add-button,
   .delete-button {
     background-color: #FFF;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     padding: 5px;
     border-radius: 50%;
     cursor: pointer;
@@ -138,6 +182,13 @@ body {
     margin-top: 10px;
   }
   
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
   .orange-button {
     background-color: #FF914D;
     color: white;
@@ -152,6 +203,12 @@ body {
   .orange-button:hover {
     background-color: #FF6340;
   }
+
+  .small-text{
+    font-size: 12px;
+    color: #8d8686;
+    margin-top: 10px;
+}
   
   .input-with-addon {
     position: relative;
@@ -168,8 +225,9 @@ body {
     top: 0;
     right: 0;
     background-color: #ddd;
-    padding: 10px;
+    padding: 12px;
     border-radius: 0 5px 5px 0;
+    margin-right: 20px;
 }
 
 /* Estilos para los botones de añadir */

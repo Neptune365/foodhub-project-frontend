@@ -25,11 +25,12 @@
 
     <form>
         <div class="profile-section">
-            <div class="left-section">
-                <img src="img/blank-profile-picture-973460_960_720.webp" alt="Imagen de perfil">
-                <p>Creador</p>
-                <button class="orange-button">Cambiar Foto</button>
-            </div>
+          <div class="left-section">
+            <img src="img/blank-profile-picture-973460_960_720.webp" alt="Imagen de perfil">
+            <p>Creador</p>
+            <input type="file" id="fileInput" style="display: none;" accept="image/*">
+            <button class="orange-button" onclick="document.getElementById('fileInput').click();">Cambiar Foto</button>
+        </div>
 
             <div class="right-section">
                 <div class="personal-info">

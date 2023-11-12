@@ -19,12 +19,12 @@
             </ul>
         </nav>
 
-    <main class="yellow-background">
+    <main>
         <form id="recipeForm">
             <div class="column">
                 <h3>Sube una Foto de tu Receta:</h3>
                 <input type="file" accept="image/*">
-                <div id="passwordHelpBlock" class="form-text">
+                <div class="form-text">
                     *Formato: JPEG, PNG 
                   </div>
                 <input type="text" placeholder="Título *" required>
@@ -45,31 +45,39 @@
         
             <div class="column">
                 <h3>Escribe los ingredientes:</h3>
-                <div id="passwordHelpBlock" class="form-text">
+                <div class="form-text">
                     * Cada uno en un campo de texto junto a sus medidas o especificaciones
                   </div>
-                <div id="ingredients">
-                    <input type="text" placeholder="Ingrediente Nº1" required>
-                    <button type="button" class="add-button" onclick="addIngredient()">+</button>
+                  <div id="ingredients" class="input-container">
+                    <div class="input-row">
+                        <input type="text" placeholder="Ingrediente Nº1" required>
+                        <button type="button" class="delete-button" onclick="deleteInput(this)">-</button>
+                    </div>
+                    <button type="button" class="add-button" onclick="addInput('ingredients', 'Ingrediente')">+</button>
                 </div>
             </div>
         
             <div class="column">
                 <h3>Escribe las instrucciones:</h3>
-                <div id="passwordHelpBlock" class="form-text">
+                <div class="form-text">
                     * Cada uno en un campo de texto, SIN GUIAS DE ORDEN
                   </div>
-                <div id="steps">
-                    <input type="text" placeholder="Paso Nº1" required>
-                    <button type="button" class="add-button" onclick="addStep()">+</button>
+                  <div id="steps" class="input-container">
+                    <div class="input-row">
+                        <input type="text" placeholder="Paso Nº1" required>
+                        <button type="button" class="delete-button" onclick="deleteInput(this)">-</button>
+                    </div>
+                    <button type="button" class="add-button" onclick="addInput('steps', 'Paso')">+</button>
                 </div>
             </div>
-        
         </form>
 
-        <button type="button" class="orange-button" onclick="publishRecipe()">Publicar</button>
-        <p>* Todos los campos obligatorios deben ser completados</p>
-      </main>
+        <!-- Después del botón de Publicar -->
+        <div class="button-container">
+            <button type="button" class="orange-button" onclick="publishRecipe()">Publicar</button>
+            <p class="small-text">* Los campos obligatorios deben ser completados</p>
+        </div>
+
 
       <div class="footer">
         <div class="footer-text">
@@ -81,3 +89,4 @@
     <script src="js/script.js"></script>
   </body>
 </html>
+

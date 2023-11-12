@@ -52,19 +52,21 @@ body {
 }
 
 main {
-    background-color: #fffacd; /* Puedes ajustar el color de fondo según tus preferencias */
+    background-color: #F6F8E8; /* Puedes ajustar el color de fondo según tus preferencias */
 }
 
 /* Estilos para el main de la receta */
 .recipe-main {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 40px;
+    position: relative;
 }
 
 .left-column {
-    flex: 1;
+    flex: 3.5;
     margin-right: 20px;
+    padding: 50px;
 }
 
 .breadcrumbs {
@@ -77,14 +79,47 @@ main {
     margin-bottom: 20px;
 }
 
+.creator-info {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos dentro de creator-info */
+}
+
+.profile-picture {
+    width: 50px; /* Ajusta el tamaño de la imagen del perfil según sea necesario */
+    height: 50px;
+    border-radius: 50%; /* Para hacer la imagen redonda */
+    margin-right: 10px; /* Espacio entre la imagen del perfil y el nombre */
+    margin-left: 20px;
+}
+
 .right-column {
-    flex: 1;
+    flex: 6.5;
+    padding: 50px;
 }
 
 .ingredients, .instructions {
     margin-bottom: 20px;
 }
 
+.instructions ol {
+    list-style-type: none;
+    counter-reset: step-counter;
+}
+
+.instructions li {
+    counter-increment: step-counter;
+    margin-bottom: 15px;
+}
+
+.instructions p{
+    text-align: justify;
+}
+
+.instructions li::before {
+    content: "Paso " counter(step-counter) ": ";
+    font-weight: bold;
+    margin-right: 5px;
+}
 
 /* Estilos para el footer */
 .footer {

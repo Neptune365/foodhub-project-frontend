@@ -58,36 +58,45 @@ main {
 }
 
 h1 {
-    color: #FFA500; /* Naranja */
+    color: black; /* Naranja */
 }
 
 form {
+    background-color: #FFF; /* Cambiado a blanco */
     max-width: 800px;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
+    padding: 20px; /* Añadido espacio de relleno al formulario */
 }
 
 .profile-section {
+    background-color: #FFF; /* Agregado fondo blanco a la sección del perfil */
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    padding: 20px; /* Añadido espacio de relleno a la sección del perfil */
+    flex-wrap: wrap;
+}
+
+.right-section {
+    flex: 1;
 }
 
 .left-section {
     text-align: center;
+    margin-top: 30px;
 }
 
 .left-section img {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
     margin-bottom: 10px;
 }
 
 .left-section p {
     font-weight: bold;
-    color: #FFA500; /* Naranja */
+    color: black; /* Naranja */
     margin-bottom: 20px;
 }
 
@@ -99,25 +108,22 @@ form {
     padding: 10px;
     border: none;
     border-radius: 20px;
+    margin-top: 160px;
 }
 
-.right-section {
-    flex: 1;
-}
 
 .personal-info,
 .account-info {
     background-color: #FFF;
-    border: 1px solid #ccc;
     border-radius: 10px;
     padding: 20px;
-    margin-bottom: 20px;
 }
 
 h2 {
-    color: #FFA500; /* Naranja */
+    color: black;
     font-size: 18px;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 input {

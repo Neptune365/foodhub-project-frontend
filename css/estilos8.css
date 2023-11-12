@@ -90,6 +90,8 @@ main {
 .content {
     flex: 1;
     padding: 20px;
+    margin-top: -120px;
+    padding: 50px;
 }
 
 /* Estilos para las cards de recetas */

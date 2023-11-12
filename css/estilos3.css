@@ -58,7 +58,7 @@ main {
 }
 
 h1 {
-    color: #FF914D; /* Naranja */
+    color: black; /* Naranja */
 }
 
 form {
@@ -71,7 +71,7 @@ form {
 }
 
 h2 {
-    color: #FF914D; /* Naranja */
+    color: black; /* Naranja */
     font-size: 16px;
     margin-bottom: 20px;
 }

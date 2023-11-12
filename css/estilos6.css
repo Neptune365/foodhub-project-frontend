@@ -51,6 +51,16 @@ body {
     color: gray;
 }
 
+main {
+    flex: 1; /* Hace que el main ocupe el espacio restante en el contenedor flex (body) */
+    min-height: 80vh; /* Ajusta la altura mínima al 80% del viewport height */
+    display: flex; /* Convierte el main en un contenedor flex */
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra verticalmente el contenido */
+    text-align: center;
+}
+
+
 .yellow-background {
     background-color: #F6F8E8; /* Amarillo claro */
     text-align: center;
@@ -82,6 +92,7 @@ body {
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
+    margin: 10px auto;
 }
 
 .orange-button:hover {
