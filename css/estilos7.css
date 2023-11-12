@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background-color: #FFF9E6;
+  }
+
+  .wrapper {
+    flex: 1;
+}
+
+  /* Estilos para el navbar */
+.navbar {
+    background-color: white;
+    padding: 15px 0; 
+    text-align: center;
+}
+
+.navbar a.active {
+  border-bottom: 3px solid #FF914D; /* Línea naranja debajo del enlace activo */
+  color: #64B43E; /* Cambia el color del texto para resaltarlo */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 30px; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Estilos para el logo */
+.logo img {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+/* Estilos para los enlaces del navbar */
+.navbar a {
+    text-decoration: none;
+    color: #64B43E;
+}
+
+/* Estilos para los enlaces al pasar el mouse */
+.navbar a:hover {
+    color: gray;
+}
+  
+  form {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+  
+  .column {
+    width: 33.33%;
+    background-color: white;
+    padding: 20px;
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .column h3 {
+    margin-bottom: 10px;
+}
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .upload-container {
+    margin-bottom: 20px;
+  }
+  
+  input,
+  textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  .postfix-container {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .postfix {
+    margin-left: 5px;
+  }
+  
+  .add-button,
+  .delete-button {
+    background-color: #FFF;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 200px;
+  }
+  
+  .add-button:hover,
+  .delete-button:hover {
+    background-color: #FF6340;
+  }
+  
+  .required-text {
+    font-size: 14px;
+    color: #FF914D;
+    margin-top: 10px;
+  }
+  
+  .orange-button {
+    background-color: #FF914D;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .orange-button:hover {
+    background-color: #FF6340;
+  }
+  
+  .input-with-addon {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-with-addon input {
+    width: calc(100% - 60px);
+    padding: 10px;
+}
+
+.input-with-addon .addon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Estilos para los botones de añadir */
+.add-button {
+    background-color: #fff;
+    color: #FF914D;
+    border: 1px solid #FF914D;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #ffffff; /* Color de fondo gris para el footer */
+    text-align: center;
+    padding: 30px 0; /* Ajusta el relleno vertical del footer */
+}
+
+/* Estilos para el texto debajo del logo en el footer */
+.footer-text {
+    font-size: 20px; /* Tamaño del texto */
+    color: black; /* Color del texto gris oscuro */
+    font-weight: bold;
+}

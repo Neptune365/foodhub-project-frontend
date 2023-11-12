@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* Estilos para el navbar */
+.navbar {
+    background-color: white;
+    padding: 15px 0; 
+    text-align: center;
+}
+
+.navbar a.active {
+    border-bottom: 3px solid #FF914D; /* Línea naranja debajo del enlace activo */
+    color: #64B43E; /* Cambia el color del texto para resaltarlo */
+  }
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 30px; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Estilos para el logo */
+.logo img {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+/* Estilos para los enlaces del navbar */
+.navbar a {
+    text-decoration: none;
+    color: #64B43E;
+}
+
+/* Estilos para los enlaces al pasar el mouse */
+.navbar a:hover {
+    color: gray;
+}
+
+main {
+    background-color: #FFFFE0; /* Amarillo claro */
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1 {
+    color: #FFA500; /* Naranja */
+}
+
+form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-section {
+    text-align: center;
+}
+
+.left-section img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.left-section p {
+    font-weight: bold;
+    color: #FFA500; /* Naranja */
+    margin-bottom: 20px;
+}
+
+.orange-button {
+    background-color: #FFA500; /* Naranja */
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.right-section {
+    flex: 1;
+}
+
+.personal-info,
+.account-info {
+    background-color: #FFF;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #FFA500; /* Naranja */
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[readonly] {
+    background-color: #f9f9f9;
+}
+
+.orange-button {
+    background-color: #FFA500; /* Naranja */
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #ffffff; /* Color de fondo gris para el footer */
+    text-align: center;
+    padding: 30px 0; /* Ajusta el relleno vertical del footer */
+}
+
+/* Estilos para el texto debajo del logo en el footer */
+.footer-text {
+    font-size: 20px; /* Tamaño del texto */
+    color: black; /* Color del texto gris oscuro */
+    font-weight: bold;
+}

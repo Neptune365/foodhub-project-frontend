@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* Estilos para el navbar */
+.navbar {
+    background-color: white;
+    padding: 15px 0; 
+    text-align: center;
+}
+
+.navbar a.active {
+    border-bottom: 3px solid #FF914D; /* Línea naranja debajo del enlace activo */
+    color: #64B43E; /* Cambia el color del texto para resaltarlo */
+  }
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 30px; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Estilos para el logo */
+.logo img {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+/* Estilos para los enlaces del navbar */
+.navbar a {
+    text-decoration: none;
+    color: #64B43E;
+}
+
+/* Estilos para los enlaces al pasar el mouse */
+.navbar a:hover {
+    color: gray;
+}
+
+.main-content {
+    text-align: center;
+    flex: 1;
+    margin: 0; 
+    padding: 0;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 800px; /* Ajusta la altura de la imagen */
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: white; /* Fondo blanco */
+    padding: 30px; /* Ajusta el espacio interno del recuadro blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.overlay h2 {
+    font-weight: bold;
+    font-size: 24px;
+    color: black; /* Texto negro */
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 16px;
+    color: black; /* Texto negro */
+    margin-bottom: 20px;
+}
+
+.orange-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF914D;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.small-cards-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.small-card {
+    flex: 1;
+    background-color: white;
+    padding: 0px;
+    border-radius: 10px;
+}
+
+.small-card p {
+    font-size: 20px; /* Ajusta el tamaño de fuente según sea necesario */
+    margin: 0; /* Elimina el margen predeterminado del párrafo */
+}
+
+.vertical-line {
+    width: 2px;
+    height: 100px; /* Ajusta la altura de la línea vertical según sea necesario */
+    background-color: #ccc; /* Color gris de la línea vertical */
+}
+
+/* Estilos para los contenedores de columnas */
+.column {
+    width: 33.33%; /* Establece el ancho de cada columna al 33.33% para tres columnas en una fila */
+    float: left; /* Hace que las columnas floten a la izquierda */
+    box-sizing: border-box; /* Incluye el relleno y el margen en el ancho de la columna */
+    padding: 10px; /* Añade espacio entre las columnas */
+    background-color: #F6F8E8; 
+    margin-top: 20px;
+}
+
+/* Estilos para las tarjetas */
+.card {
+    text-align: center;
+    background-color: #F6F8E8; 
+    margin-bottom: 50px;
+}
+
+.card-title {
+    font-size: 24px; /* Tamaño de fuente más grande para los títulos */
+    color: #FF914D; /* Color de texto naranja para los títulos */
+    background-color: #F6F8E8;
+}
+
+.card-text {
+    font-size: 18px; /* Tamaño de fuente más grande para los títulos */
+    color: rgb(0, 0, 0); /* Color de texto naranja para los títulos */
+    background-color: #F6F8E8;
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #ffffff; /* Color de fondo gris para el footer */
+    text-align: center;
+    padding: 30px 0; /* Ajusta el relleno vertical del footer */
+}
+
+/* Estilos para el texto debajo del logo en el footer */
+.footer-text {
+    font-size: 20px; /* Tamaño del texto */
+    color: black; /* Color del texto gris oscuro */
+    font-weight: bold;
+}

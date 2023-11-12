@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* Estilos para el navbar */
+.navbar {
+    background-color: white;
+    padding: 15px 0; 
+    text-align: center;
+}
+
+.navbar a.active {
+    border-bottom: 3px solid #FF914D; /* Línea naranja debajo del enlace activo */
+    color: #64B43E; /* Cambia el color del texto para resaltarlo */
+  }
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 30px; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Estilos para el logo */
+.logo img {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+/* Estilos para los enlaces del navbar */
+.navbar a {
+    text-decoration: none;
+    color: #64B43E;
+}
+
+/* Estilos para los enlaces al pasar el mouse */
+.navbar a:hover {
+    color: gray;
+}
+
+main {
+    background-color: #FFFFE0; /* Amarillo claro */
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1 {
+    color: #FFA500; /* Naranja */
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #FFA500; /* Naranja */
+    position: relative;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #FFA500; /* Naranja */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+p {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+input,
+button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #FFA500; /* Naranja */
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #ffffff; /* Color de fondo gris para el footer */
+    text-align: center;
+    padding: 30px 0; /* Ajusta el relleno vertical del footer */
+}
+
+/* Estilos para el texto debajo del logo en el footer */
+.footer-text {
+    font-size: 20px; /* Tamaño del texto */
+    color: black; /* Color del texto gris oscuro */
+    font-weight: bold;
+}

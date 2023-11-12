@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* Estilos para el navbar */
+.navbar {
+    background-color: white;
+    padding: 15px 0; 
+    text-align: center;
+}
+
+.navbar a.active {
+    border-bottom: 3px solid #FF914D; /* Línea naranja debajo del enlace activo */
+    color: #64B43E; /* Cambia el color del texto para resaltarlo */
+  }
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 30px; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Estilos para el logo */
+.logo img {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+/* Estilos para los enlaces del navbar */
+.navbar a {
+    text-decoration: none;
+    color: #64B43E;
+}
+
+/* Estilos para los enlaces al pasar el mouse */
+.navbar a:hover {
+    color: gray;
+}
+
+.yellow-background {
+    background-color: #FFFFCC; /* Amarillo claro */
+    text-align: center;
+    padding: 20px;
+}
+
+.yellow-background h1 {
+    color: #FFA500; /* Naranja */
+}
+
+.recipe-info {
+    margin: 20px 0;
+}
+
+.recipe-info p {
+    font-size: 18px;
+}
+
+.recipe-info span {
+    font-weight: bold;
+}
+
+.orange-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF914D; /* Naranja */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.orange-button:hover {
+    background-color: #FFA500; /* Naranja más claro al pasar el mouse */
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #ffffff; /* Color de fondo gris para el footer */
+    text-align: center;
+    padding: 30px 0; /* Ajusta el relleno vertical del footer */
+}
+
+/* Estilos para el texto debajo del logo en el footer */
+.footer-text {
+    font-size: 20px; /* Tamaño del texto */
+    color: black; /* Color del texto gris oscuro */
+    font-weight: bold;
+}

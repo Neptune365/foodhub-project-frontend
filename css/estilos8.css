@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* Estilos para el navbar */
+.navbar {
+    background-color: white;
+    padding: 15px 0; 
+    text-align: center;
+}
+
+.navbar a.active {
+    border-bottom: 3px solid #FF914D; /* Línea naranja debajo del enlace activo */
+    color: #64B43E; /* Cambia el color del texto para resaltarlo */
+  }
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 30px; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Estilos para el logo */
+.logo img {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+/* Estilos para los enlaces del navbar */
+.navbar a {
+    text-decoration: none;
+    color: #64B43E;
+}
+
+/* Estilos para los enlaces al pasar el mouse */
+.navbar a:hover {
+    color: gray;
+}
+
+main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #F6F8E8;
+}
+
+.category-column {
+    background-color: #9FD080; /* Verde */
+    color: black;
+    padding: 20px;
+    text-align: center;
+    width: 10%; /* Ancho de la columna */
+    height: 100%; /* Ocupa toda la altura disponible */
+}
+
+.category-list p {
+    margin: 10px 0;
+}
+
+.category-list a {
+    text-decoration: none;
+    color: black; /* Color original del texto */
+  }
+
+  .category-list a:hover {
+    color: white; /* Color al pasar el mouse */
+  }
+
+.category-list hr {
+    border: 1px solid #FFF;
+    margin: 5px 0;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Estilos para las cards de recetas */
+.recipe-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.active-category {
+    color: #ffffff; 
+    font-weight: bold;
+}
+
+/* Añade estilos para la clase "active" */
+.navbar a.active {
+    border-bottom: 3px solid #FF914D; /* Línea naranja debajo del enlace activo */
+    color: #64B43E; /* Cambia el color del texto para resaltarlo */
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #ffffff; /* Color de fondo gris para el footer */
+    text-align: center;
+    padding: 30px 0; /* Ajusta el relleno vertical del footer */
+}
+
+/* Estilos para el texto debajo del logo en el footer */
+.footer-text {
+    font-size: 20px; /* Tamaño del texto */
+    color: black; /* Color del texto gris oscuro */
+    font-weight: bold;
+}
