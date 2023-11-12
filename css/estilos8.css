@@ -66,7 +66,7 @@ main {
     padding: 20px;
     text-align: center;
     width: 10%; /* Ancho de la columna */
-    height: 100%; /* Ocupa toda la altura disponible */
+    height: 94%; /* Ocupa toda la altura disponible */
 }
 
 .category-list p {
@@ -78,7 +78,7 @@ main {
     color: black; /* Color original del texto */
   }
 
-  .category-list a:hover {
+.category-list a:hover {
     color: white; /* Color al pasar el mouse */
   }
 
@@ -112,15 +112,17 @@ main {
     margin-bottom: 10px;
 }
 
+h3{
+    font-size: 20px;
+}
+
+.description{
+    text-align: justify;
+}
+
 .active-category {
     color: #ffffff; 
     font-weight: bold;
-}
-
-/* Añade estilos para la clase "active" */
-.navbar a.active {
-    border-bottom: 3px solid #FF914D; /* Línea naranja debajo del enlace activo */
-    color: #64B43E; /* Cambia el color del texto para resaltarlo */
 }
 
 /* Estilos para el footer */

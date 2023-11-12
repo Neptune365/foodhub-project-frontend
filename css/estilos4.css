@@ -52,7 +52,7 @@ body {
 }
 
 main {
-    background-color: #FFFFE0; /* Amarillo claro */
+    background-color: #F6F8E8; /* Amarillo claro */
     text-align: center;
     padding: 50px 20px;
 }
@@ -64,6 +64,8 @@ h1 {
 form {
     max-width: 800px;
     margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
 }
 
 .profile-section {
@@ -96,7 +98,7 @@ form {
     font-weight: bold;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 .right-section {

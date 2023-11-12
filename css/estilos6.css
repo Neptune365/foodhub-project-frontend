@@ -52,7 +52,7 @@ body {
 }
 
 .yellow-background {
-    background-color: #FFFFCC; /* Amarillo claro */
+    background-color: #F6F8E8; /* Amarillo claro */
     text-align: center;
     padding: 20px;
 }
@@ -79,7 +79,7 @@ body {
     background-color: #FF914D; /* Naranja */
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
 }

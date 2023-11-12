@@ -63,6 +63,12 @@ body {
     border-radius: 10px;
 }
 
+.form-text{
+  font-size: 13px;
+  text-align: left;
+  color: #8d8686;
+  margin-bottom: 20px;
+}
   
   .column {
     width: 33.33%;
