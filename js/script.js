@@ -1,3 +1,47 @@
+function togglePassword() {
+  var passwordInput = document.getElementById('passwordInput');
+  var toggleBtn = document.getElementById('togglePasswordBtn');
+
+  // Cambiar el tipo del input entre "password" y "text"
+  if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      toggleBtn.textContent = 'Ocultar';
+  } else {
+      passwordInput.type = 'password';
+      toggleBtn.textContent = 'Mostrar';
+  }
+}
+
+// Función para verificar la fortaleza de la contraseña
+function checkPasswordStrength() {
+  var passwordInput = document.getElementById('passwordInput');
+  var passwordStrength = document.getElementById('passwordStrength');
+
+  // Verificar la longitud de la contraseña
+  var lengthRequirement = passwordInput.value.length >= 8;
+
+  // Verificar si la contraseña contiene al menos un número
+  var containsNumber = /\d/.test(passwordInput.value);
+
+  // Verificar si la contraseña contiene al menos una letra mayúscula
+  var containsUppercase = /[A-Z]/.test(passwordInput.value);
+
+  // Comprobar todas las condiciones
+  if (lengthRequirement && containsNumber && containsUppercase) {
+      passwordStrength.textContent = 'Contraseña segura';
+      passwordStrength.className = 'valid';
+      return true;
+  } else {
+      passwordStrength.textContent = 'La contraseña debe tener al menos 8 caracteres, un número y una letra mayúscula';
+      passwordStrength.className = '';
+      return false;
+  }
+}
+
+// Asociar la función de verificación de fortaleza a eventos del input de contraseña
+var passwordInput = document.getElementById('passwordInput');
+passwordInput.addEventListener('input', checkPasswordStrength);
+
 /*************************************************************************************************** */
 
 function crearCuenta() {
@@ -30,7 +74,28 @@ function crearCuenta() {
       return;
   }
 
-  // Redirigir a la página de explorar si la validación es exitosa
+  // Verificar la fortaleza de la contraseña
+  var isPasswordStrong = checkPasswordStrength();
+
+  // Resto de la lógica, como abrir el modal, etc.
+  if (isPasswordStrong) {
+    openModal();
+  } else {
+    alert('La contraseña no cumple con los requisitos de seguridad.');
+  }
+}
+
+function openModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+function redirectToExplorar() {
   window.location.href = 'explorar.html';
 }
 
@@ -74,36 +139,45 @@ document.getElementById('fileInput').addEventListener('change', handleFileSelect
 /*************************************************************************************************** */
 
 function addInput(containerId, inputType) {
-    // Obtener el contenedor del input
-    var inputContainer = document.getElementById(containerId);
+  // Obtener el contenedor del input
+  var inputContainer = document.getElementById(containerId);
 
-    // Crear un nuevo div para la fila de input
-    var inputRow = document.createElement("div");
-    inputRow.className = "input-row";
+  // Crear un nuevo div para la fila de input
+  var inputRow = document.createElement("div");
+  inputRow.className = "input-row";
 
-    // Crear un nuevo input
-    var newInput = document.createElement("input");
-    newInput.type = "text";
-    newInput.placeholder = inputType + " Nº" + (inputContainer.childElementCount + 1);
-    newInput.required = true;
+  // Crear un nuevo elemento (input o textarea)
+  var newInput;
+  if (inputType === 'Paso') {
+      newInput = document.createElement("textarea");
+      newInput.rows = "3"; // Puedes ajustar la cantidad de filas según tus necesidades
+      newInput.maxLength = "400";
+  } else {
+      newInput = document.createElement("input");
+      newInput.type = "text";
+      newInput.maxLength = "70";
+  }
 
-    // Crear un nuevo botón de eliminación
-    var deleteButton = document.createElement("button");
-    deleteButton.className = "delete-button";
-    deleteButton.innerText = "-";
-    deleteButton.onclick = function () {
-        deleteInput(inputContainer, inputRow);
-    };
+  newInput.placeholder = inputType + " Nº" + (inputContainer.childElementCount + 1);
+  newInput.required = true;
 
-    // Agregar el nuevo input y botón al div de la fila de input
-    inputRow.appendChild(newInput);
-    inputRow.appendChild(deleteButton);
+  // Crear un nuevo botón de eliminación
+  var deleteButton = document.createElement("button");
+  deleteButton.className = "delete-button";
+  deleteButton.innerText = "-";
+  deleteButton.onclick = function () {
+      deleteInput(inputContainer, inputRow);
+  };
 
-    // Agregar la fila de input al contenedor
-    inputContainer.appendChild(inputRow);
+  // Agregar el nuevo input y botón al div de la fila de input
+  inputRow.appendChild(newInput);
+  inputRow.appendChild(deleteButton);
 
-    // Actualizar los placeholders después de agregar
-    updatePlaceholders(inputContainer);
+  // Agregar la fila de input al contenedor
+  inputContainer.appendChild(inputRow);
+
+  // Actualizar los placeholders después de agregar
+  updatePlaceholders(inputContainer);
 }
 
 /*************************************************************************************************** */
@@ -130,37 +204,92 @@ function updatePlaceholders(inputContainer) {
 }
 /*************************************************************************************************** */
 
-  function publishRecipe() {
-    // Obtener los valores de los campos
-    var title = document.querySelector('input[placeholder="Título *"]').value;
-    var description = document.querySelector('textarea[placeholder="Descripción *"]').value;
-    var preparationTime = document.querySelector('input[placeholder="Tiempo de Preparación *"]').value;
-    var servings = document.querySelector('input[placeholder="Cantidad de porciones *"]').value;
-    var calories = document.querySelector('input[placeholder="Cantidad de calorías *"]').value;
-  
-    // Obtener los ingredientes
-    var ingredients = [];
-    var ingredientsInputs = document.getElementById("ingredients").querySelectorAll("input");
-    ingredientsInputs.forEach(function (input) {
-      ingredients.push(input.value);
-    });
-  
-    // Obtener los pasos
-    var steps = [];
-    var stepsInputs = document.getElementById("steps").querySelectorAll("input");
-    stepsInputs.forEach(function (input) {
-      steps.push(input.value);
-    });
-  
-    // Aquí puedes agregar la lógica para enviar los datos al servidor o realizar otras acciones
-    console.log("Receta Publicada:");
-    console.log("Título:", title);
-    console.log("Descripción:", description);
-    console.log("Tiempo de Preparación:", preparationTime);
-    console.log("Porciones:", servings);
-    console.log("Calorías:", calories);
-    console.log("Ingredientes:", ingredients);
-    console.log("Pasos:", steps);
+function publishRecipe() {
+  // Obtener los valores de los campos
+  var title = document.querySelector('input[placeholder="Título *"]').value;
+  var description = document.querySelector('textarea[placeholder="Descripción *"]').value;
+  var preparationTime = document.querySelector('input[placeholder="Tiempo de Preparación *"]').value;
+  var servings = document.querySelector('input[placeholder="Cantidad de porciones *"]').value;
+  var calories = document.querySelector('input[placeholder="Cantidad de calorías *"]').value;
+
+  // Obtener los ingredientes
+  var ingredients = [];
+  var ingredientsInputs = document.querySelectorAll('#ingredients input');
+  ingredientsInputs.forEach(function (input) {
+    ingredients.push(input.value);
+  });
+
+  // Obtener los pasos
+  var steps = [];
+  var stepsInputs = document.querySelectorAll('#steps textarea');
+  stepsInputs.forEach(function (textarea) {
+    steps.push(textarea.value);
+  });
+
+  // Validar campos obligatorios
+  if (!title || !description || !preparationTime || !servings || !calories || ingredients.length === 0 || steps.length === 0) {
+    alert('Por favor, completa todos los campos obligatorios.');
+    return;
   }
-  
+
+  // Aquí puedes agregar la lógica para enviar los datos al servidor o realizar otras acciones
+  console.log("Receta Publicada:");
+  console.log("Título:", title);
+  console.log("Descripción:", description);
+  console.log("Tiempo de Preparación:", preparationTime);
+  console.log("Porciones:", servings);
+  console.log("Calorías:", calories);
+  console.log("Ingredientes:", ingredients);
+  console.log("Pasos:", steps);
+  openRecipeSuccessModal();
+  isRecipeSaved = true;
+}
+
+function openRecipeSuccessModal() {
+  var modal = document.getElementById('recipeSuccessModal');
+  modal.style.display = 'block';
+}
+
+function closeRecipeSuccessModal() {
+  var modal = document.getElementById('recipeSuccessModal');
+  modal.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('El DOM ha sido cargado. Este mensaje debe aparecer en la consola.');
+
+  const navbarLinks = document.querySelectorAll('.navbar a');
+  var isRecipeSaved = false;
+
+  navbarLinks.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+          console.log('Clic en el enlace del navbar');
+
+          if (!isRecipeSaved) {
+              event.preventDefault();
+              openWarningModal();
+          }
+      });
+  });
+
+  function openWarningModal() {
+      console.log('Abriendo el modal de advertencia');
+      var modal = document.getElementById('warningModal');
+      modal.style.display = 'block';
+  }
+
+  function closeWarningModal() {
+      var modal = document.getElementById('warningModal');
+      modal.style.display = 'none';
+  }
+
+  function confirmNavigate() {
+      closeWarningModal();
+      // Redirige a la página deseada (puedes cambiar la URL)
+      window.location.href = 'nuevaPagina.html';
+  }
+
+});
+
+
   /*************************************************************************************************** */

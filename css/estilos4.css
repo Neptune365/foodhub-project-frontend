@@ -66,8 +66,7 @@ form {
     max-width: 800px;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    padding: 20px; /* Añadido espacio de relleno al formulario */
+    border-radius: 30px;
 }
 
 .profile-section {
@@ -77,6 +76,14 @@ form {
     align-items: flex-start;
     padding: 20px; /* Añadido espacio de relleno a la sección del perfil */
     flex-wrap: wrap;
+    border-radius: 30px;
+}
+
+.left-section,
+.right-section {
+  flex-basis: 25%; /* Establece el ancho inicial de cada sección (puede ajustarse según sea necesario) */
+  /* Puedes ajustar el margen interno o externo de cada sección según tus preferencias */
+  margin: 0;
 }
 
 .right-section {

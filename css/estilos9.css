@@ -51,6 +51,20 @@ body {
     color: gray;
 }
 
+.back-button {
+    margin-bottom: 20px;
+}
+
+.back-button a {
+    display: inline-block;
+}
+
+.back-button img {
+    width: 30px; /* Ajusta el ancho según sea necesario */
+    height: 30px; /* Ajusta la altura según sea necesario */
+    margin-right: 10px; /* Añade espacio entre la imagen y el texto */
+}
+
 main {
     background-color: #F6F8E8; /* Puedes ajustar el color de fondo según tus preferencias */
 }

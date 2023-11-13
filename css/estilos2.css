@@ -51,6 +51,54 @@ body {
     color: gray;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .modal-title {
+    color: #28a745; /* Verde */
+  }
+  
+  .modal-text {
+    margin-bottom: 20px;
+  }
+  
+  .orange-button {
+    background-color: #f58025; /* Naranja */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
 main {
     background-color: #F6F8E8; /* Amarillo claro */
     text-align: center;
@@ -117,6 +165,40 @@ button {
     font-weight: bold;
     border-radius: 20px;
     margin-top: 20px;
+}
+
+.password-container {
+    position: relative;
+    margin-bottom: -15px;
+    display: flex;
+    flex-direction: row;
+}
+
+#passwordInput {
+    width: calc(100% - 30px); /* Ajusta el ancho según sea necesario, considerando el ancho del botón */
+    height: 40px;
+}
+
+#togglePasswordBtn {
+    width: 30px; /* Ajusta el ancho del botón */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: #333;
+}
+
+#passwordStrength {
+    display: block;
+    font-size: 12px;
+    color: #ff5555;
+    margin-bottom: 5px;
+}
+
+#passwordStrength.valid {
+    color: #55ff55;
 }
 
 /* Estilos para el footer */

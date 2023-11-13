@@ -127,6 +127,19 @@ h3{
     font-weight: bold;
 }
 
+.card-link {
+    text-decoration: none;
+    color: black; /* Puedes agregar esto también para asegurarte de que el color sea negro */
+}
+
+.card-link:hover {
+    /* Agrega estilos adicionales para el estado de hover si es necesario */
+}
+
+.card-title {
+    color: black; /* Asegúrate de que el color sea negro */
+}
+
 /* Estilos para el footer */
 .footer {
     background-color: #ffffff; /* Color de fondo gris para el footer */

@@ -31,7 +31,11 @@
       <input type="text" placeholder="Ingrese Apellido Paterno *" id="apellidoPaternoInput" required>
       <input type="text" placeholder="Ingrese Apellido Materno *" id="apellidoMaternoInput" required>
       <input type="email" placeholder="Ingrese Correo Electrónico *" id="emailInput" required>
-      <input type="password" placeholder="Ingrese Contraseña *" id="passwordInput" required>
+      <div class="password-container">
+        <input type="password" placeholder="Ingrese Contraseña" id="passwordInput" required>
+        <button type="button" id="togglePasswordBtn" onclick="togglePassword()">Mostrar</button>
+      </div>
+      <span id="passwordStrength"></span>
       <input type="number" placeholder="Ingrese Código de Colegiado *" id="codigoColegiadoInput" required>
       <div id="passwordHelpBlock" class="form-text">
           Ejm. 0012345
@@ -40,8 +44,19 @@
       <button type="button" onclick="crearCuenta()">Crear</button>
 
         <p class="small-text">* Los campos obligatorios deben ser completados</p>
-
     </form>
+
+   <!-- Ventana modal -->
+   <div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 class="modal-title">Registro Exitoso</h2>
+        <div class="modal-text">
+            Te enviamos un mensaje a tu correo electrónico. Pero desde ya busca todas las recetas que desees.
+        </div>
+        <button class="orange-button" onclick="redirectToExplorar()">Empezar</button>
+    </div>
+</div>
 
     </main>
 
