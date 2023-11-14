@@ -67,10 +67,10 @@ function crearCuenta() {
       return;
   }
 
-  // Validar que el código colegiado contenga solo números
+  // Validar que el código colegiado contenga solo números y no sea mayor a 6 dígitos
   var codRegex = /^\d+$/;
-  if (!codRegex.test(codigoColegiado)) {
-      alert('El código colegiado debe contener solo números.');
+  if (!codRegex.test(codigoColegiado) || codigoColegiado.length > 6 || codigoColegiado < 0) {
+      alert('El código colegiado debe contener solo números, no debe ser mayor a 6 dígitos, y no puede ser menor a 0.');
       return;
   }
 
@@ -131,10 +131,21 @@ document.getElementById('fileInput').addEventListener('change', handleFileSelect
         const file = fileInput.files[0];
 
         if (file) {
-            // Aquí puedes realizar acciones adicionales con el archivo seleccionado
-            console.log('Archivo seleccionado:', file.name);
+            // Obtener la imagen de perfil
+            const profileImage = document.getElementById('profileImage');
+
+            // Crear un objeto FileReader para leer el contenido del archivo
+            const reader = new FileReader();
+
+            // Cuando la lectura se completa, actualizar el atributo src de la imagen con la nueva imagen
+            reader.onload = function (e) {
+                profileImage.src = e.target.result;
+            };
+
+            // Leer el contenido del archivo como una URL de datos
+            reader.readAsDataURL(file);
         }
-    }
+}
 
 /*************************************************************************************************** */
 
@@ -208,9 +219,10 @@ function publishRecipe() {
   // Obtener los valores de los campos
   var title = document.querySelector('input[placeholder="Título *"]').value;
   var description = document.querySelector('textarea[placeholder="Descripción *"]').value;
-  var preparationTime = document.querySelector('input[placeholder="Tiempo de Preparación *"]').value;
-  var servings = document.querySelector('input[placeholder="Cantidad de porciones *"]').value;
-  var calories = document.querySelector('input[placeholder="Cantidad de calorías *"]').value;
+  var preparationTime = parseInt(document.querySelector('input[placeholder="Tiempo de Preparación *"]').value, 10);
+  var servings = parseInt(document.querySelector('input[placeholder="Cantidad de porciones *"]').value, 10);
+  var calories = parseInt(document.querySelector('input[placeholder="Cantidad de calorías *"]').value, 10);
+  var uploadedFile = document.querySelector('input[type="file"]').files.length; // Verificar si se ha subido un archivo
 
   // Obtener los ingredientes
   var ingredients = [];
@@ -226,11 +238,11 @@ function publishRecipe() {
     steps.push(textarea.value);
   });
 
-  // Validar campos obligatorios
-  if (!title || !description || !preparationTime || !servings || !calories || ingredients.length === 0 || steps.length === 0) {
-    alert('Por favor, completa todos los campos obligatorios.');
-    return;
-  }
+ // Validar campos obligatorios y si no son menores que 0
+ if (!title || !description || preparationTime < 0 || servings < 0 || calories < 0 || ingredients.length === 0 || steps.length === 0 || uploadedFile === 0) {
+  alert('Por favor, completa todos los campos obligatorios y asegúrate de que los valores numéricos no sean menores que 0. También asegúrate de subir un archivo.');
+  return;
+}
 
   // Aquí puedes agregar la lógica para enviar los datos al servidor o realizar otras acciones
   console.log("Receta Publicada:");
@@ -253,6 +265,10 @@ function openRecipeSuccessModal() {
 function closeRecipeSuccessModal() {
   var modal = document.getElementById('recipeSuccessModal');
   modal.style.display = 'none';
+}
+
+function redirectToGestion() {
+  window.location.href = 'gestionrecetas.html';
 }
 
 document.addEventListener('DOMContentLoaded', function () {

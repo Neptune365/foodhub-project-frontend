@@ -33,15 +33,15 @@
                 <input type="text" placeholder="Título *" maxlength="70" required>
                 <textarea placeholder="Descripción *" rows="5" maxlength="250"></textarea>
                 <div class="input-with-addon">
-                    <input type="number" placeholder="Tiempo de Preparación *" required>
+                    <input type="number" placeholder="Tiempo de Preparación *" id="temprep" required>
                     <div class="addon">min.</div>
                 </div>
                 <div class="input-with-addon">
-                    <input type="number" placeholder="Cantidad de porciones *" required>
+                    <input type="number" placeholder="Cantidad de porciones *" id="cantporc" required>
                     <div class="addon">porc.</div>
                 </div>
                 <div class="input-with-addon">
-                    <input type="number" placeholder="Cantidad de calorías *" required>
+                    <input type="number" placeholder="Cantidad de calorías *" id="cantkcal" required>
                     <div class="addon">kcal.</div>
                 </div>
                 <div class="input-with-text">
@@ -98,7 +98,7 @@
             <span class="close" onclick="closeRecipeSuccessModal('successModal')">&times;</span>
             <h2 class="modal-title">¡Bien!</h2>
             <p class="modal-text">Tus cambios se han guardado exitosamente.</p>
-            <button class="orange-button" onclick="closeRecipeSuccessModal('successModal')">OK</button>
+            <button class="orange-button" onclick="redirectToGestion()">OK</button>
             </div>
         </div>
 

@@ -177,6 +177,7 @@ button {
 #passwordInput {
     width: calc(100% - 30px); /* Ajusta el ancho según sea necesario, considerando el ancho del botón */
     height: 40px;
+    width: 340px;
 }
 
 #togglePasswordBtn {
