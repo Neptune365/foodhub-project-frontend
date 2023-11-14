@@ -24,39 +24,53 @@
             <div class="column">
                 <h3>Escribe la información de tu Receta:</h3>
                 <div class="form-text">
-                    * Sube una foto de tu receta y completa los campos
-                  </div>
-                <input type="file" accept="image/*">
+                  * Sube una foto de tu receta y completa los campos
+                </div>
+              
+                <label for="fotoReceta">Foto de la Receta *</label>
+                <input type="file" accept="image/*" id="fotoReceta" required>
+              
                 <div class="form-text">
-                    * Formato: JPEG, PNG 
-                  </div>
-                <input type="text" placeholder="Título *" maxlength="70" required>
-                <textarea placeholder="Descripción *" rows="5" maxlength="250"></textarea>
-                <div class="input-with-addon">
-                    <input type="number" placeholder="Tiempo de Preparación *" id="temprep" required>
-                    <div class="addon">min.</div>
+                  * Formato: JPEG, PNG 
                 </div>
+              
+                <label for="tituloReceta">Título *</label>
+                <input type="text" placeholder="Título *" maxlength="70" id="tituloReceta" required>
+              
+                <label for="descripcionReceta">Descripción *</label>
+                <textarea placeholder="Descripción *" rows="5" maxlength="250" id="descripcionReceta" required></textarea>
+              
                 <div class="input-with-addon">
-                    <input type="number" placeholder="Cantidad de porciones *" id="cantporc" required>
-                    <div class="addon">porc.</div>
+                  <label for="tiempoPreparacion">Tiempo de Preparación *</label>
+                  <input type="number" placeholder="Tiempo de Preparación *" id="tiempoPreparacion" required>
+                  <div class="addon">min.</div>
                 </div>
+              
                 <div class="input-with-addon">
-                    <input type="number" placeholder="Cantidad de calorías *" id="cantkcal" required>
-                    <div class="addon">kcal.</div>
+                  <label for="cantidadPorciones">Cantidad de porciones *</label>
+                  <input type="number" placeholder="Cantidad de porciones *" id="cantidadPorciones" required>
+                  <div class="addon">porc.</div>
                 </div>
+              
+                <div class="input-with-addon">
+                  <label for="cantidadCalorias">Cantidad de calorías *</label>
+                  <input type="number" placeholder="Cantidad de calorías *" id="cantidadCalorias" required>
+                  <div class="addon">kcal.</div>
+                </div>
+              
                 <div class="input-with-text">
-                    <select name="categoria" class="custom-selector" required>
-                        <option value="" disabled selected>Selecciona una categoría</option>
-                        <option value="Desayuno">Desayuno</option>
-                        <option value="Almuerzo">Almuerzo</option>
-                        <option value="Cena">Cena</option>
-                        <option value="Postres">Postres</option>
-                        <option value="Superavit">Superavit</option>
-                        <option value="Deficit">Deficit</option>
-                    </select>
+                  <label for="categoriaReceta">Categoría *</label>
+                  <select name="categoria" class="custom-selector" id="categoriaReceta" required>
+                    <option value="" disabled selected>Selecciona una categoría</option>
+                    <option value="Desayuno">Desayuno</option>
+                    <option value="Almuerzo">Almuerzo</option>
+                    <option value="Cena">Cena</option>
+                    <option value="Postres">Postres</option>
+                    <option value="Superavit">Superavit</option>
+                    <option value="Deficit">Deficit</option>
+                  </select>
                 </div>
-            
-            </div>
+              </div>
         
             <div class="column">
                 <h3>Escribe los ingredientes:</h3>

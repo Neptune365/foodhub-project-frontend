@@ -53,6 +53,12 @@ body {
 .navbar a:hover {
     color: gray;
 }
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
   
 .modal {
   display: none;
