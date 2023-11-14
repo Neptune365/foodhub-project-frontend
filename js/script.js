@@ -168,13 +168,13 @@ function addInput(containerId, inputType) {
   // Crear un nuevo elemento (input o textarea)
   var newInput;
   if (inputType === 'Paso') {
-      newInput = document.createElement("textarea");
-      newInput.rows = "3"; // Puedes ajustar la cantidad de filas según tus necesidades
-      newInput.maxLength = "400";
+    newInput = document.createElement("textarea");
+    newInput.rows = "3"; // Puedes ajustar la cantidad de filas según tus necesidades
+    newInput.maxLength = "400";
   } else {
-      newInput = document.createElement("input");
-      newInput.type = "text";
-      newInput.maxLength = "70";
+    newInput = document.createElement("input");
+    newInput.type = "text";
+    newInput.maxLength = "70";
   }
 
   newInput.placeholder = inputType + " Nº" + (inputContainer.childElementCount + 1);
@@ -185,7 +185,8 @@ function addInput(containerId, inputType) {
   deleteButton.className = "delete-button";
   deleteButton.innerText = "-";
   deleteButton.onclick = function () {
-      deleteInput(inputContainer, inputRow);
+    deleteInput(inputContainer, inputRow);
+    validateInputs(inputContainer);
   };
 
   // Agregar el nuevo input y botón al div de la fila de input
@@ -198,6 +199,7 @@ function addInput(containerId, inputType) {
   // Actualizar los placeholders después de agregar
   updatePlaceholders(inputContainer);
 }
+
 
 /*************************************************************************************************** */
 
@@ -232,25 +234,63 @@ function publishRecipe() {
   var calories = parseInt(document.querySelector('input[placeholder="Cantidad de calorías *"]').value, 10);
   var uploadedFile = document.querySelector('input[type="file"]').files.length; // Verificar si se ha subido un archivo
 
+  // Obtener la categoría seleccionada
+  var category = document.querySelector('.custom-selector').value;
+
   // Obtener los ingredientes
   var ingredients = [];
   var ingredientsInputs = document.querySelectorAll('#ingredients input');
   ingredientsInputs.forEach(function (input) {
-    ingredients.push(input.value);
+    var ingredientValue = input.value.trim();
+    if (ingredientValue !== '') {
+      ingredients.push(ingredientValue);
+    }
   });
 
   // Obtener los pasos
   var steps = [];
   var stepsInputs = document.querySelectorAll('#steps textarea');
   stepsInputs.forEach(function (textarea) {
-    steps.push(textarea.value);
+    var stepValue = textarea.value.trim();
+    if (stepValue !== '') {
+      steps.push(stepValue);
+    }
   });
 
- // Validar campos obligatorios y si no son menores que 0
- if (!title || !description || preparationTime < 0 || !preparationTime || servings < 0 || !servings  || calories < 0 || !calories || ingredients.length === 0 || steps.length === 0 || uploadedFile === 0) {
-  alert('Por favor, completa todos los campos obligatorios y asegúrate de que los valores numéricos no sean menores que 0. También asegúrate de subir un archivo.');
-  return;
-}
+  // Validar campos obligatorios y si no son menores que 0
+  var isValid = true;
+
+  // Validar título y descripción
+  if (!title || !description) {
+    isValid = false;
+  }
+
+  // Validar valores numéricos
+  if (preparationTime < 0 || !preparationTime || servings < 0 || !servings || calories < 0 || !calories) {
+    isValid = false;
+  }
+
+  // Validar la categoría seleccionada
+  var category = document.querySelector('.custom-selector').value;
+  if (category === "") {
+    isValid = false;
+  }
+
+  // Validar ingredientes y pasos
+  if (ingredients.length === 0 || steps.length === 0) {
+    isValid = false;
+  }
+
+  // Verificar si se ha subido un archivo
+  var uploadedFile = document.querySelector('input[type="file"]').files.length;
+  if (uploadedFile === 0) {
+    isValid = false;
+  }
+
+  if (!isValid) {
+    alert('Por favor, completa todos los campos obligatorios y asegúrate de llenar los campos de ingredientes y pasos.');
+    return;
+  }
 
   // Aquí puedes agregar la lógica para enviar los datos al servidor o realizar otras acciones
   console.log("Receta Publicada:");
@@ -259,11 +299,13 @@ function publishRecipe() {
   console.log("Tiempo de Preparación:", preparationTime);
   console.log("Porciones:", servings);
   console.log("Calorías:", calories);
+  console.log("Categoría:", category);
   console.log("Ingredientes:", ingredients);
   console.log("Pasos:", steps);
   openRecipeSuccessModal();
   isRecipeSaved = true;
 }
+
 
 function openRecipeSuccessModal() {
   var modal = document.getElementById('recipeSuccessModal');
