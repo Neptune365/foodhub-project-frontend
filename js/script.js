@@ -108,19 +108,27 @@ function iniciarSesion() {
 
   // Validar que los campos no estén vacíos
   if (email.trim() === '' || password.trim() === '') {
-      alert('Por favor, completa todos los campos.');
-      return;
+    alert('Por favor, completa todos los campos.');
+    return;
   }
 
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-          alert('Por favor, ingresa una direccion de correo valida');
-            return;
-        }
+  if (!emailRegex.test(email)) {
+    alert('Por favor, ingresa una dirección de correo válida');
+    return;
+  }
+
+  // Validar la contraseña: al menos 8 caracteres, un número y una letra mayúscula
+  var passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  if (!passwordRegex.test(password)) {
+    alert('Por favor, ingresar una contraseña válida');
+    return;
+  }
 
   // Redirigir a miperfil.html si la validación es exitosa
   window.location.href = 'explorar.html';
 }
+
 
 /*************************************************************************************************** */
 
@@ -239,7 +247,7 @@ function publishRecipe() {
   });
 
  // Validar campos obligatorios y si no son menores que 0
- if (!title || !description || preparationTime < 0 || servings < 0 || calories < 0 || ingredients.length === 0 || steps.length === 0 || uploadedFile === 0) {
+ if (!title || !description || preparationTime < 0 || !preparationTime || servings < 0 || !servings  || calories < 0 || !calories || ingredients.length === 0 || steps.length === 0 || uploadedFile === 0) {
   alert('Por favor, completa todos los campos obligatorios y asegúrate de que los valores numéricos no sean menores que 0. También asegúrate de subir un archivo.');
   return;
 }
